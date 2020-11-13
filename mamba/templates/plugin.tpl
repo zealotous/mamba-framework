@@ -15,6 +15,7 @@ from mamba.core.services.herokuservice import HerokuService
 from mamba.core.services.threadpool import ThreadPoolService
 from ${application} import MambaApplicationFactory
 
+# the config path is relative to ${app}/twisted/plugins
 cfg = abspath(join(dirname(__file__), '..', '..', 'config/${file}'))
 settings = config.Application(cfg)
 
