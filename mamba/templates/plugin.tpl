@@ -1,3 +1,5 @@
+from os.path import abspath, dirname, join
+
 from zope.interface import implements
 
 from twisted.python import usage
@@ -13,8 +15,8 @@ from mamba.core.services.herokuservice import HerokuService
 from mamba.core.services.threadpool import ThreadPoolService
 from ${application} import MambaApplicationFactory
 
-
-settings = config.Application('config/${file}')
+cfg = abspath(join(dirname(__file__), '..', '..', 'config/${file}'))
+settings = config.Application(cfg)
 
 
 class Options(usage.Options):
